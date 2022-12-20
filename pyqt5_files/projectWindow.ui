@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>projectWindow</class>
+ <widget class="QMainWindow" name="projectWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Calibri Light</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Project Window</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 127, 255);
+font-family: &quot;Calibri Light&quot;;
+color: white;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1500</width>
+      <height>1000</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1500</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1500</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 15px;
+color: black;</string>
+    </property>
+    <property name="currentIndex">
+     <number>5</number>
+    </property>
+    <widget class="QWidget" name="generalDetails_btn">
+     <property name="font">
+      <font>
+       <family>Calibri Light</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <attribute name="title">
+      <string>General Details</string>
+     </attribute>
+     <widget class="QLabel" name="generalDetails_proj_abbv">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>50</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Proj abbv&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="generalDetails_proj_code">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Proj code&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="generalDetails_proj_phase">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>120</y>
+        <width>391</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Phase:&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="generalDetails_proj_completion">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>160</y>
+        <width>391</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Completion:&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="generalDetails_issues_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>511</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:&quot;light grey&quot;;
+color: white;
+border: 2px solid white;
+border-radius: 10px;
+font-size: 15px;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="generalDescription_open_issues">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>491</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 20px;
+border: none;
+color: red;</string>
+       </property>
+       <property name="text">
+        <string>&lt;No. of open issues: &gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="generalDescription_closed_issues">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>491</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 20px;
+border: none;
+color: green;</string>
+       </property>
+       <property name="text">
+        <string>&lt;No. of closed issues: &gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="generalDetails_docs_box">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>971</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:&quot;light grey&quot;;
+color: white;
+border: 2px solid white;
+border-radius: 10px;
+font-size: 15px;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="generalDescription_dwg_count">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 20px;
+border: none;
+color: black;</string>
+       </property>
+       <property name="text">
+        <string>&lt;No. DWG files: &gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="generalDescription_bim_count">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 20px;
+border: none;
+color: black;</string>
+       </property>
+       <property name="text">
+        <string>&lt;No. BIM files: &gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="generalDescription_excel_count">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>60</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 20px;
+border: none;
+color: black;</string>
+       </property>
+       <property name="text">
+        <string>&lt;No. Excel files: &gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="generalDescription_pdf_count">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>10</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 20px;
+border: none;
+color: black;</string>
+       </property>
+       <property name="text">
+        <string>&lt;No. PDF files: &gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>971</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: &quot;light grey&quot;;
+color: black;
+font-size: 15px;
+border: 2px solid white;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="generalDetails_proj_title">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Proj title&gt;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="workFlow_btn">
+     <attribute name="title">
+      <string>Work Flow</string>
+     </attribute>
+     <widget class="QLabel" name="workFlow_current_pahse">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>511</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Current Phase: &gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="workFlow_work_flow_name">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>511</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Workflow:&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="flowEdit_btn">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>20</y>
+        <width>181</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+border-radius: 10px;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>Edit Work FLow</string>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>981</width>
+        <height>661</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: &quot;light grey&quot;;
+color: white;
+border-radius: 10px;
+border: 2px solid white;</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>977</width>
+         <height>657</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="issuesBoard_btn">
+     <attribute name="title">
+      <string>Issues Board</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="docsList_btn">
+     <attribute name="title">
+      <string>Doccumentation</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="ganttChart_btn">
+     <attribute name="title">
+      <string>Gantt Chart</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="projMembers_btn">
+     <attribute name="title">
+      <string>Project Members</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

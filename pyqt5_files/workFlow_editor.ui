@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>create_workFlow_window</class>
+ <widget class="QMainWindow" name="create_workFlow_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Work flow editor</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 127, 255);
+color: white;
+font-family: &quot;Calibri light&quot;;
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
+    </property>
+    <property name="text">
+     <string>Work Flow Name</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_workFlow_name_input">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>20</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+color: black;
+border: 2px solid balck;
+font-size: 20px;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>20</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+font-size: 20px;</string>
+    </property>
+    <property name="text">
+     <string>Flow Tree</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>20</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri light</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+color: black;
+border: 2px solid balck;
+</string>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="edit_workFlow_display">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>611</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: &quot;light gray&quot;;
+border: 2px solid white;</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QScrollArea" name="edit_workFlow_scroll_area">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>611</width>
+       <height>631</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>607</width>
+        <height>627</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="edit_workFlow_new_phase_box">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>60</y>
+      <width>341</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid white;</string>
+    </property>
+    <property name="title">
+     <string>Add New Phase</string>
+    </property>
+    <widget class="QPushButton" name="edit_workFlow_add_phase_btn">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>240</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 15px;</string>
+     </property>
+     <property name="text">
+      <string>Add Phase</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_workFlow_new_phase_name_input">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>311</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 15px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Phase name</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="edit_workFlow_new_phase_lead_list">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+font-size: 15px;</string>
+     </property>
+     <property name="currentText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="edit_workFlow_new_phase_end_list">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+font-size: 15px;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="edit_workFlow_edit_phase_box">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>380</y>
+      <width>341</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid white;</string>
+    </property>
+    <property name="title">
+     <string>Edit Phase</string>
+    </property>
+    <widget class="QPushButton" name="edit_workFlow_edit_phase_btn">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>240</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 15px;</string>
+     </property>
+     <property name="text">
+      <string>Edit Phase</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edit_workFlow_edit_phase_name_input">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>311</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 15px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Phase name</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="edit_workFlow_edit_phase_lead_list">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+font-size: 15px;</string>
+     </property>
+     <property name="currentText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="edit_workFlow_edit_phase_end_list">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>311</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+color: black;
+font-size: 15px;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="edit_workFlow_ok_btn">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>720</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: green;
+border-radius: 20px;
+border: 2px solid white;
+color: white;
+font-size: 20px;</string>
+    </property>
+    <property name="text">
+     <string>Ok</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="edit_workFlow_cancel_btn">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>720</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red;
+border-radius: 20px;
+border: 2px solid white;
+color: white;
+font-size: 20px;</string>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
