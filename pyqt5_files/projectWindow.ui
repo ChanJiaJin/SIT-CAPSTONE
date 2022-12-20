@@ -63,7 +63,7 @@ color: white;</string>
 color: black;</string>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="generalDetails_btn">
      <property name="font">
@@ -393,7 +393,7 @@ color: white;</string>
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>511</width>
+        <width>101</width>
         <height>41</height>
        </rect>
       </property>
@@ -408,7 +408,10 @@ color: white;</string>
 color: white;</string>
       </property>
       <property name="text">
-       <string>&lt;Workflow:&gt;</string>
+       <string>Workflow:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="flowEdit_btn">
@@ -458,13 +461,294 @@ border: 2px solid white;</string>
          <height>657</height>
         </rect>
        </property>
+       <widget class="QGroupBox" name="issueBoard_card">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>10</y>
+          <width>311</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 20x;</string>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="phase_name">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>281</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+font-size: 15px;
+font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>&lt;Phase:&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="phase_status">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>281</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+font-size: 15px;</string>
+         </property>
+         <property name="text">
+          <string>&lt;Status:&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="phase_openIssues_count">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>281</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+font-size: 15px;</string>
+         </property>
+         <property name="text">
+          <string>&lt;Open Issues:&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="phase_totalIssues_count">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>50</y>
+           <width>291</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+font-size: 15px;</string>
+         </property>
+         <property name="text">
+          <string>&lt;Total issues:&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="phase_internal_flowName">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>281</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+font-size: 15px;</string>
+         </property>
+         <property name="text">
+          <string>&lt;Internal Flow:&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="phase_totalDocs_count">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>90</y>
+           <width>281</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: none;
+font-size: 15px;</string>
+         </property>
+         <property name="text">
+          <string>&lt;No. of docs:&gt;</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="setStatus_btn">
+         <property name="geometry">
+          <rect>
+           <x>80</x>
+           <y>140</y>
+           <width>141</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: red;
+color: white;
+border: 2px solid white;
+border-radius: none;
+font-size: 15px;
+font-weight: bold</string>
+         </property>
+         <property name="text">
+          <string>CLOSE PHASE</string>
+         </property>
+        </widget>
+       </widget>
       </widget>
+     </widget>
+     <widget class="QComboBox" name="workFlow_list">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>20</y>
+        <width>321</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 20px;</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="issuesBoard_btn">
      <attribute name="title">
       <string>Issues Board</string>
      </attribute>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Phase:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Workflow:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="workFlow_list_2">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>20</y>
+        <width>341</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 20px;</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="phase_list">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>60</y>
+        <width>341</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 20px;</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>981</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: &quot;Light gray&quot;;
+color: black;
+border: 2px solid black;
+</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="raiseIssue_btn">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>20</y>
+        <width>171</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>Raise Issue</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="docsList_btn">
      <attribute name="title">

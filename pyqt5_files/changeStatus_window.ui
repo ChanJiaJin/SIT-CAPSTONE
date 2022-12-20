@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>changeStatus_window</class>
+ <widget class="QMainWindow" name="changeStatus_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Close Phase</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 127, 255);
+color: white;
+font-family: &quot;Calibri Light&quot;;
+font-size: 20px;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="phase_status">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>250</y>
+      <width>451</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+font-size: 20px;</string>
+    </property>
+    <property name="text">
+     <string>&lt;Current Status:&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="greenlight_count">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>300</y>
+      <width>451</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+font-size: 20px;</string>
+    </property>
+    <property name="text">
+     <string>&lt;Phase closure greenlights:&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>471</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid white;
+border-radius: 15px;
+font-size: 20px;
+background-color: green;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>This window allows admins to close this phase. Do note that this step is IRREVERSIBLE. Please ensure that all relevant figure heads agree on the closure of this phase despite this system needing all their manual approval to close the phase.</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="changeStatus_btn">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>360</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: green;
+color: white;
+font-size: 20px;
+border: 2px solid white;
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string>Close Phase</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="changeStatus_cancel_btn">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>430</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: red;
+color: white;
+font-size: 20px;
+border: 2px solid white;
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -157,6 +157,128 @@ border: 2px solid white;</string>
         <height>627</height>
        </rect>
       </property>
+      <widget class="QGroupBox" name="issueBoard_card">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>10</y>
+         <width>311</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 20x;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="phase_name">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>281</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+font-size: 15px;
+font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>&lt;Phase:&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="phase_status">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>281</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+font-size: 15px;</string>
+        </property>
+        <property name="text">
+         <string>&lt;Status:&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="phase_openIssues_count">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>281</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+font-size: 15px;</string>
+        </property>
+        <property name="text">
+         <string>&lt;Open Issues:&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="phase_totalIssues_count">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>291</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+font-size: 15px;</string>
+        </property>
+        <property name="text">
+         <string>&lt;Total issues:&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="phase_internal_flowName">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>281</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+font-size: 15px;</string>
+        </property>
+        <property name="text">
+         <string>&lt;Internal Flow:&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="phase_totalDocs_count">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>281</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: none;
+font-size: 15px;</string>
+        </property>
+        <property name="text">
+         <string>&lt;No. of docs:&gt;</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
    </widget>
