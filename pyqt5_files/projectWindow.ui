@@ -63,7 +63,7 @@ color: white;</string>
 color: black;</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="generalDetails_btn">
      <property name="font">
@@ -427,7 +427,6 @@ color: white;</string>
        <string notr="true">background-color: white;
 color: black;
 border: 2px solid black;
-border-radius: 10px;
 font-size: 20px;</string>
       </property>
       <property name="text">
@@ -711,14 +710,26 @@ border: 2px solid black;
 font-size: 20px;</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView_2">
+     <widget class="QTableView" name="pendingIssues_table">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>110</y>
-        <width>981</width>
-        <height>651</height>
+        <x>20</x>
+        <y>160</y>
+        <width>300</width>
+        <height>550</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>550</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>550</height>
+       </size>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: &quot;Light gray&quot;;
@@ -734,7 +745,7 @@ border: 2px solid black;
       <property name="geometry">
        <rect>
         <x>810</x>
-        <y>20</y>
+        <y>30</y>
         <width>171</width>
         <height>51</height>
        </rect>
@@ -749,6 +760,177 @@ font-size: 20px;</string>
        <string>Raise Issue</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="showIssues_btn">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>30</y>
+        <width>171</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>Show Issues</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>100</y>
+        <width>1011</width>
+        <height>671</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 2px solid white;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QTableView" name="pendingIssues_table_2">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>60</y>
+         <width>300</width>
+         <height>550</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>550</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>550</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: &quot;Light gray&quot;;
+color: black;
+border: 2px solid black;
+</string>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="issuesBoard_pending_issues_count">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>20</y>
+         <width>281</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+font-size: 20px;
+font-weight: bold;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>&lt;Pending Issues:&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="issuesBoard_closed_issues_count">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>20</y>
+         <width>281</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+font-size: 20px;
+font-weight: bold;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>&lt;Closed Issues:&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QTableView" name="pendingIssues_table_3">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>60</y>
+         <width>300</width>
+         <height>550</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>550</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>550</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: &quot;Light gray&quot;;
+color: black;
+border: 2px solid black;
+</string>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="issuesBoard_open_issues_count">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>20</y>
+         <width>281</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+font-size: 20px;
+font-weight: bold;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>&lt;Open Issues:&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <zorder>groupBox</zorder>
+     <zorder>label_2</zorder>
+     <zorder>label</zorder>
+     <zorder>workFlow_list_2</zorder>
+     <zorder>phase_list</zorder>
+     <zorder>pendingIssues_table</zorder>
+     <zorder>raiseIssue_btn</zorder>
+     <zorder>showIssues_btn</zorder>
     </widget>
     <widget class="QWidget" name="docsList_btn">
      <attribute name="title">

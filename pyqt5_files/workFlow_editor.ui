@@ -467,10 +467,11 @@ font-size: 15px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: green;
-border-radius: 20px;
 border: 2px solid white;
-color: white;
-font-size: 20px;</string>
+border-radius: none;
+font-size: 15px;
+font-weight: bold;
+color: white;</string>
     </property>
     <property name="text">
      <string>Ok</string>
@@ -487,10 +488,10 @@ font-size: 20px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: red;
-border-radius: 20px;
 border: 2px solid white;
-color: white;
-font-size: 20px;</string>
+border-radius: none;
+font-size: 15px;
+font-weight: bold</string>
     </property>
     <property name="text">
      <string>Cancel</string>
