@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
+    <width>1200</width>
     <height>700</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>900</width>
+    <width>1200</width>
     <height>700</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>900</width>
+    <width>1200</width>
     <height>700</height>
    </size>
   </property>
@@ -91,12 +91,159 @@ border: none</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>761</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: &quot;light gray&quot;;
+color: black;
+border: 2px solid black;</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-10</y>
+      <width>791</width>
+      <height>811</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid white;</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="setStatus_btn_3">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>50</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: red;
+color: white;
+border: 2px solid white;
+border-radius: none;
+font-size: 15px;
+font-weight: bold</string>
+     </property>
+     <property name="text">
+      <string>CLOSE ISSUE</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>10</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 20px;
+border: none;</string>
+    </property>
+    <property name="text">
+     <string>Request Extention</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="requestExtention_date_display">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>50</y>
+      <width>391</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: &quot;light gray&quot;;
+border: 2px solid black;
+font-size: 20px;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="setStatus_btn_5">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>100</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: green;
+color: white;
+border: 2px solid white;
+border-radius: none;
+font-size: 15px;</string>
+    </property>
+    <property name="text">
+     <string>Request</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="requestExtention_date_selection_btn">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>100</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 0);
+color: black;
+border: 2px solid black;
+border-radius: none;
+font-size: 15px;</string>
+    </property>
+    <property name="text">
+     <string>Choose Date</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="issue_postUpdate_btn">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>620</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+border-radius: none;
+font-size: 15px;</string>
+    </property>
+    <property name="text">
+     <string>Post Update</string>
+    </property>
+   </widget>
    <widget class="QPushButton" name="setStatus_btn">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>30</y>
-      <width>141</width>
+      <x>1040</x>
+      <y>160</y>
+      <width>151</width>
       <height>41</height>
      </rect>
     </property>
@@ -115,9 +262,9 @@ font-weight: bold</string>
    <widget class="QPushButton" name="setStatus_btn_2">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>30</y>
-      <width>141</width>
+      <x>800</x>
+      <y>160</y>
+      <width>151</width>
       <height>41</height>
      </rect>
     </property>
@@ -133,82 +280,56 @@ font-weight: bold</string>
      <string>DENY</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="setStatus_btn_3">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>730</x>
-      <y>30</y>
-      <width>141</width>
+      <x>900</x>
+      <y>260</y>
+      <width>191</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: red;
-color: white;
-border: 2px solid white;
-border-radius: none;
-font-size: 15px;
-font-weight: bold</string>
-    </property>
-    <property name="text">
-     <string>CLOSE ISSUE</string>
-    </property>
-   </widget>
-   <widget class="QTableView" name="tableView">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>881</width>
-      <height>481</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: &quot;light gray&quot;;
-color: black;
-border: 2px solid black;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="setStatus_btn_4">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>630</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: white;
-color: black;
-border: 2px solid black;
-border-radius: none;
-font-size: 15px;</string>
+     <string notr="true">font-size: 20px;
+border: none;</string>
     </property>
     <property name="text">
      <string>Post Update</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QPushButton" name="setStatus_btn_5">
+   <widget class="QTextEdit" name="issue_postUpdate_input">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>630</y>
-      <width>201</width>
-      <height>41</height>
+      <x>810</x>
+      <y>300</y>
+      <width>371</width>
+      <height>291</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 0);
+     <string notr="true">background-color: white;
+border: 2px solid white;
 color: black;
-border: 2px solid black;
-border-radius: none;
-font-size: 15px;</string>
-    </property>
-    <property name="text">
-     <string>Request Extension</string>
+font-size: 20px;</string>
     </property>
    </widget>
+   <zorder>groupBox</zorder>
+   <zorder>issue_issueTitkle</zorder>
+   <zorder>issue_issueCode</zorder>
+   <zorder>issue_raisedDate</zorder>
+   <zorder>tableView</zorder>
+   <zorder>label</zorder>
+   <zorder>requestExtention_date_display</zorder>
+   <zorder>setStatus_btn_5</zorder>
+   <zorder>requestExtention_date_selection_btn</zorder>
+   <zorder>issue_postUpdate_btn</zorder>
+   <zorder>setStatus_btn</zorder>
+   <zorder>setStatus_btn_2</zorder>
+   <zorder>label_2</zorder>
+   <zorder>issue_postUpdate_input</zorder>
   </widget>
  </widget>
  <resources/>

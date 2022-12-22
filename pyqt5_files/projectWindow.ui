@@ -37,7 +37,7 @@ font-family: &quot;Calibri Light&quot;;
 color: white;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QTabWidget" name="myIssues_btn">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -63,7 +63,7 @@ color: white;</string>
 color: black;</string>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="generalDetails_btn">
      <property name="font">
@@ -945,6 +945,11 @@ border: none;</string>
     <widget class="QWidget" name="projMembers_btn">
      <attribute name="title">
       <string>Project Members</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>My Issueas</string>
      </attribute>
     </widget>
    </widget>
