@@ -63,7 +63,7 @@ color: white;</string>
 color: black;</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="generalDetails_btn">
      <property name="font">
@@ -335,6 +335,12 @@ color: black;</string>
 color: black;
 font-size: 15px;
 border: 2px solid white;</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
       </property>
      </widget>
      <widget class="QLabel" name="generalDetails_proj_title">
@@ -738,7 +744,10 @@ border: 2px solid black;
 </string>
       </property>
       <property name="editTriggers">
-       <set>QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
       </property>
      </widget>
      <widget class="QPushButton" name="raiseIssue_btn">
@@ -822,7 +831,10 @@ border: 2px solid black;
 </string>
        </property>
        <property name="editTriggers">
-        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
        </property>
       </widget>
       <widget class="QLabel" name="issuesBoard_pending_issues_count">
@@ -897,7 +909,10 @@ border: 2px solid black;
 </string>
        </property>
        <property name="editTriggers">
-        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::SelectedClicked</set>
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
        </property>
       </widget>
       <widget class="QLabel" name="issuesBoard_open_issues_count">
@@ -936,21 +951,289 @@ border: none;</string>
      <attribute name="title">
       <string>Doccumentation</string>
      </attribute>
+     <widget class="QPushButton" name="add_newDocs_list_btn">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>20</y>
+        <width>221</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid black;
+color: black;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>New Document List</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="docsList_table">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>100</y>
+        <width>961</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:&quot;Light gray&quot;;
+border: 2px solid balck;
+color: black;
+font-size: 20px;</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>false</bool>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>true</bool>
+      </property>
+      <property name="dragDropOverwriteMode">
+       <bool>false</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: none;
+color: white;
+font-size: 20px;
+border: none;</string>
+      </property>
+      <property name="text">
+       <string>Workflow:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="docs_workflow_list">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>20</y>
+        <width>321</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid balck;
+font-size: 20px;
+color: black;</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="ganttChart_btn">
      <attribute name="title">
       <string>Gantt Chart</string>
      </attribute>
+     <widget class="QScrollArea" name="ganttCahrt_display">
+      <property name="geometry">
+       <rect>
+        <x>-20</x>
+        <y>130</y>
+        <width>1021</width>
+        <height>671</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: &quot;Light gray&quot;;
+color: black;
+border: 2px solid black;
+font-size: 15px;</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1017</width>
+         <height>667</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="ganttChart_proj_title">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>551</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+font-size: 20px;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>&lt;Proj Title&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ganttChart_proj_code">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>551</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+font-size: 20px;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>&lt;Proj Code&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>20</y>
+        <width>181</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+border: 2px solid black;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>Edit Chart</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="projMembers_btn">
      <attribute name="title">
       <string>Project Members</string>
      </attribute>
-    </widget>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>My Issueas</string>
-     </attribute>
+     <widget class="QLabel" name="members_totalMembers_count">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>361</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Total Members:&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="members_editmembers_btn">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>10</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>Edit Members</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="members_sortDepartment_btn">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>70</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>Sort by Department</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="members_sortName_btn">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>70</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+font-size: 20px;</string>
+      </property>
+      <property name="text">
+       <string>Sort by Name</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="members_tableDisplay">
+      <property name="geometry">
+       <rect>
+        <x>-20</x>
+        <y>120</y>
+        <width>1021</width>
+        <height>681</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: &quot;Light Gray&quot;;
+color: white;
+border: 2px solid white;
+font-size: 20px;</string>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>

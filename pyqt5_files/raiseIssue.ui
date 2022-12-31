@@ -236,6 +236,12 @@ font-size: 20px;</string>
 color: black;
 border: 2px solid black;</string>
     </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::AnyKeyPressed</set>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::SingleSelection</enum>
+    </property>
    </widget>
    <widget class="QTableView" name="raiseIssue_added_people_table">
     <property name="geometry">
@@ -250,6 +256,12 @@ border: 2px solid black;</string>
      <string notr="true">background-color: &quot;Light gray&quot;;
 color: black;
 border: 2px solid black;</string>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::DoubleClicked</set>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::NoSelection</enum>
     </property>
    </widget>
   </widget>
