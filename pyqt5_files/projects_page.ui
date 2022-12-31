@@ -89,9 +89,9 @@ border: 2px solid black;</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>50</y>
         <width>1001</width>
-        <height>781</height>
+        <height>731</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -104,6 +104,25 @@ font-size: 20px;</string>
       </property>
       <property name="selectionMode">
        <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="myIssues_tab_issues_count">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>471</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 20px;
+color: white;
+background-color: none;
+border: none;</string>
+      </property>
+      <property name="text">
+       <string>&lt;Total Issues: &gt;</string>
       </property>
      </widget>
     </widget>
