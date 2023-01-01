@@ -6,101 +6,73 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1060</width>
-    <height>617</height>
+    <width>500</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1060</width>
-    <height>617</height>
+    <width>500</width>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1060</width>
-    <height>617</height>
+    <width>500</width>
+    <height>500</height>
    </size>
-  </property>
-  <property name="font">
-   <font>
-    <kerning>false</kerning>
-   </font>
-  </property>
-  <property name="contextMenuPolicy">
-   <enum>Qt::DefaultContextMenu</enum>
   </property>
   <property name="windowTitle">
    <string>Login</string>
   </property>
-  <property name="windowOpacity">
-   <double>0.000000000000000</double>
-  </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 52, 151, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 52, 151, 255), stop:1 rgba(255, 255, 255, 255));
+font-family: &quot;Calibri Light&quot;;
+color: black;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="loginWelcome_label">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>140</y>
-      <width>481</width>
-      <height>101</height>
+      <x>140</x>
+      <y>160</y>
+      <width>221</width>
+      <height>41</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Calibri Light</family>
-      <pointsize>28</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-      <kerning>false</kerning>
-     </font>
-    </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::NoContextMenu</enum>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: none;
+     <string notr="true">font-size: 30px;
+border: none;
+background-color: none;
 font-weight: bold;</string>
     </property>
     <property name="text">
-     <string>Hello there, welcome!</string>
+     <string>Hello there</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="login_btn">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>280</y>
-      <width>321</width>
+      <x>140</x>
+      <y>230</y>
+      <width>221</width>
       <height>51</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-     </font>
-    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(85, 85, 255);
+     <string notr="true">background-color: white;
+color: black;
 font-size: 20px;
-border: 2px solid white;
-color: white;</string>
+border: 2px solid black;</string>
     </property>
     <property name="text">
      <string>Login with Microsoft</string>
     </property>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
