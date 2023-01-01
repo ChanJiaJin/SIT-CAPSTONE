@@ -39,7 +39,7 @@ class Ui_newProj_add_window(object):
         self.newProj_add_title_input.setStyleSheet("background-color: white;\n"
 "color: black;\n"
 "border: 2px solid black;\n"
-"border-radius: 20px;")
+"font-size: 20px;")
         self.newProj_add_title_input.setObjectName("newProj_add_title_input")
         self.newProj_window_abbv_label = QtWidgets.QLabel(self.centralwidget)
         self.newProj_window_abbv_label.setGeometry(QtCore.QRect(10, 100, 231, 21))
@@ -58,7 +58,7 @@ class Ui_newProj_add_window(object):
         self.newProj_add_abbv_input.setStyleSheet("background-color: white;\n"
 "color: black;\n"
 "border: 2px solid black;\n"
-"border-radius: 20px;")
+"font-size: 20px;")
         self.newProj_add_abbv_input.setObjectName("newProj_add_abbv_input")
         self.newProj_window_code_label = QtWidgets.QLabel(self.centralwidget)
         self.newProj_window_code_label.setGeometry(QtCore.QRect(10, 180, 141, 21))
@@ -77,12 +77,12 @@ class Ui_newProj_add_window(object):
         self.newProj_add_code_input.setStyleSheet("background-color: white;\n"
 "color: black;\n"
 "border: 2px solid black;\n"
-"border-radius: 20px;")
+"font-size: 20px;")
         self.newProj_add_code_input.setObjectName("newProj_add_code_input")
         self.newProj_cancel_btn = QtWidgets.QPushButton(self.centralwidget)
         self.newProj_cancel_btn.setGeometry(QtCore.QRect(30, 290, 131, 51))
         self.newProj_cancel_btn.setStyleSheet("background-color: red;\n"
-"border-radius: 20px;\n"
+"font-size: 20px;\n"
 "border: 2px solid white;\n"
 "color: white;\n"
 "font-size: 20px;")
@@ -90,7 +90,7 @@ class Ui_newProj_add_window(object):
         self.newProj_ok_btn = QtWidgets.QPushButton(self.centralwidget)
         self.newProj_ok_btn.setGeometry(QtCore.QRect(310, 290, 131, 51))
         self.newProj_ok_btn.setStyleSheet("background-color: green;\n"
-"border-radius: 20px;\n"
+"font-size: 20px;\n"
 "border: 2px solid white;\n"
 "color: white;\n"
 "font-size: 20px;")
@@ -111,3 +111,12 @@ class Ui_newProj_add_window(object):
         self.newProj_add_code_input.setPlaceholderText(_translate("newProj_add_window", "Code"))
         self.newProj_cancel_btn.setText(_translate("newProj_add_window", "Cancel"))
         self.newProj_ok_btn.setText(_translate("newProj_add_window", "Ok"))
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_newProj_add_window()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

@@ -48,16 +48,14 @@ class Ui_changeStatus_window(object):
         self.changeStatus_btn.setStyleSheet("background-color: green;\n"
 "color: white;\n"
 "font-size: 20px;\n"
-"border: 2px solid white;\n"
-"border-radius: 10px;")
+"border: 2px solid white;")
         self.changeStatus_btn.setObjectName("changeStatus_btn")
         self.changeStatus_cancel_btn = QtWidgets.QPushButton(self.centralwidget)
         self.changeStatus_cancel_btn.setGeometry(QtCore.QRect(150, 430, 191, 51))
         self.changeStatus_cancel_btn.setStyleSheet("background-color: red;\n"
 "color: white;\n"
 "font-size: 20px;\n"
-"border: 2px solid white;\n"
-"border-radius: 10px;")
+"border: 2px solid white;")
         self.changeStatus_cancel_btn.setObjectName("changeStatus_cancel_btn")
         changeStatus_window.setCentralWidget(self.centralwidget)
 

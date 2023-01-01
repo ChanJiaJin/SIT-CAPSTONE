@@ -97,3 +97,12 @@ class Ui_members_editMembers_window(object):
         self.label_2.setText(_translate("members_editMembers_window", "Department"))
         self.label_3.setText(_translate("members_editMembers_window", "Email"))
         self.pushButton.setText(_translate("members_editMembers_window", "Add Member"))
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_members_editMembers_window()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

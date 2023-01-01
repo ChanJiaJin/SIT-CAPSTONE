@@ -14,46 +14,30 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_login_window(object):
     def setupUi(self, login_window):
         login_window.setObjectName("login_window")
-        login_window.resize(1060, 617)
-        login_window.setMinimumSize(QtCore.QSize(1060, 617))
-        login_window.setMaximumSize(QtCore.QSize(1060, 617))
-        font = QtGui.QFont()
-        font.setKerning(False)
-        login_window.setFont(font)
-        login_window.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        login_window.setWindowOpacity(0.0)
-        login_window.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 52, 151, 255), stop:1 rgba(255, 255, 255, 255));")
+        login_window.resize(500, 500)
+        login_window.setMinimumSize(QtCore.QSize(500, 500))
+        login_window.setMaximumSize(QtCore.QSize(500, 500))
+        login_window.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 52, 151, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"font-family: \"Calibri Light\";\n"
+"color: black;")
         self.centralwidget = QtWidgets.QWidget(login_window)
         self.centralwidget.setObjectName("centralwidget")
-        self.loginWelcome_label = QtWidgets.QLabel(self.centralwidget)
-        self.loginWelcome_label.setGeometry(QtCore.QRect(270, 140, 481, 101))
-        font = QtGui.QFont()
-        font.setFamily("Calibri Light")
-        font.setPointSize(28)
-        font.setBold(True)
-        font.setWeight(75)
-        font.setKerning(False)
-        self.loginWelcome_label.setFont(font)
-        self.loginWelcome_label.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
-        self.loginWelcome_label.setAutoFillBackground(False)
-        self.loginWelcome_label.setStyleSheet("background-color: none;\n"
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(140, 160, 221, 41))
+        self.label.setStyleSheet("font-size: 30px;\n"
+"border: none;\n"
+"background-color: none;\n"
 "font-weight: bold;")
-        self.loginWelcome_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.loginWelcome_label.setObjectName("loginWelcome_label")
-        self.login_btn = QtWidgets.QPushButton(self.centralwidget)
-        self.login_btn.setGeometry(QtCore.QRect(350, 280, 321, 51))
-        font = QtGui.QFont()
-        font.setPointSize(-1)
-        self.login_btn.setFont(font)
-        self.login_btn.setStyleSheet("background-color: rgb(85, 85, 255);\n"
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(140, 230, 221, 51))
+        self.pushButton.setStyleSheet("background-color: white;\n"
+"color: black;\n"
 "font-size: 20px;\n"
-"border: 2px solid white;\n"
-"color: white;")
-        self.login_btn.setObjectName("login_btn")
+"border: 2px solid black;")
+        self.pushButton.setObjectName("pushButton")
         login_window.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(login_window)
-        self.statusbar.setObjectName("statusbar")
-        login_window.setStatusBar(self.statusbar)
 
         self.retranslateUi(login_window)
         QtCore.QMetaObject.connectSlotsByName(login_window)
@@ -61,5 +45,15 @@ class Ui_login_window(object):
     def retranslateUi(self, login_window):
         _translate = QtCore.QCoreApplication.translate
         login_window.setWindowTitle(_translate("login_window", "Login"))
-        self.loginWelcome_label.setText(_translate("login_window", "Hello there, welcome!"))
-        self.login_btn.setText(_translate("login_window", "Login with Microsoft"))
+        self.label.setText(_translate("login_window", "Hello there"))
+        self.pushButton.setText(_translate("login_window", "Login with Microsoft"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    login_window = QtWidgets.QMainWindow()
+    ui = Ui_login_window()
+    ui.setupUi(login_window)
+    login_window.show()
+    sys.exit(app.exec_())

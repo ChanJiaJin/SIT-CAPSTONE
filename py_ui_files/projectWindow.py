@@ -485,7 +485,7 @@ class Ui_projectWindow(object):
         projectWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(projectWindow)
-        self.myIssues_btn.setCurrentIndex(5)
+        self.myIssues_btn.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(projectWindow)
 
     def retranslateUi(self, projectWindow):
@@ -534,3 +534,12 @@ class Ui_projectWindow(object):
         self.members_sortDepartment_btn.setText(_translate("projectWindow", "Sort by Department"))
         self.members_sortName_btn.setText(_translate("projectWindow", "Sort by Name"))
         self.myIssues_btn.setTabText(self.myIssues_btn.indexOf(self.projMembers_btn), _translate("projectWindow", "Project Members"))
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_projectWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

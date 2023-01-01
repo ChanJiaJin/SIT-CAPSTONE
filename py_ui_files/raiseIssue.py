@@ -121,3 +121,13 @@ class Ui_raiseIssue_window(object):
         self.raiseIssue_ok_btn.setText(_translate("raiseIssue_window", "Ok"))
         self.raiseIssue_cancel_btn.setText(_translate("raiseIssue_window", "Cancel"))
         self.label_2.setText(_translate("raiseIssue_window", "Add People"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_raiseIssue_window()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

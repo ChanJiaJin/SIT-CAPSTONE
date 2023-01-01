@@ -64,7 +64,7 @@ class Ui_projects_page(object):
         projects_page.setStatusBar(self.statusbar)
 
         self.retranslateUi(projects_page)
-        self.issuesPage_btn.setCurrentIndex(1)
+        self.issuesPage_btn.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(projects_page)
 
     def retranslateUi(self, projects_page):
@@ -74,3 +74,13 @@ class Ui_projects_page(object):
         self.issuesPage_btn.setTabText(self.issuesPage_btn.indexOf(self.tab), _translate("projects_page", "My Projects"))
         self.myIssues_tab_issues_count.setText(_translate("projects_page", "<Total Issues: >"))
         self.issuesPage_btn.setTabText(self.issuesPage_btn.indexOf(self.tab_2), _translate("projects_page", "My Issues"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_projects_page()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
