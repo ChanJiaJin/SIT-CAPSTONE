@@ -183,8 +183,8 @@ font-size: 20px;</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>200</y>
+      <x>1020</x>
+      <y>320</y>
       <width>151</width>
       <height>51</height>
      </rect>
@@ -197,6 +197,74 @@ border: 2px solid black;</string>
     </property>
     <property name="text">
      <string>Add Member</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>200</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+border: none;
+font-size: 20px;</string>
+    </property>
+    <property name="text">
+     <string>Admin</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>260</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+border: none;
+font-size: 20px;</string>
+    </property>
+    <property name="text">
+     <string>Figurehead</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="isAdmin_check">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>210</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="isFigurehead_check">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>270</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
