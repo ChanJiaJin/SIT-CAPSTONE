@@ -79,12 +79,34 @@ class Ui_members_editMembers_window(object):
 "font-size: 20px;")
         self.members_addMembers_email_input.setObjectName("members_addMembers_email_input")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(1030, 200, 151, 51))
+        self.pushButton.setGeometry(QtCore.QRect(1020, 320, 151, 51))
         self.pushButton.setStyleSheet("background-color: white;\n"
 "color: black;\n"
 "font-size: 20px;\n"
 "border: 2px solid black;")
         self.pushButton.setObjectName("pushButton")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(870, 200, 111, 31))
+        self.label_4.setStyleSheet("color: white;\n"
+"border: none;\n"
+"font-size: 20px;")
+        self.label_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(870, 260, 101, 31))
+        self.label_5.setStyleSheet("color: white;\n"
+"border: none;\n"
+"font-size: 20px;")
+        self.label_5.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_5.setObjectName("label_5")
+        self.isAdmin_check = QtWidgets.QCheckBox(self.centralwidget)
+        self.isAdmin_check.setGeometry(QtCore.QRect(970, 210, 21, 20))
+        self.isAdmin_check.setText("")
+        self.isAdmin_check.setObjectName("isAdmin_check")
+        self.isFigurehead_check = QtWidgets.QCheckBox(self.centralwidget)
+        self.isFigurehead_check.setGeometry(QtCore.QRect(970, 270, 21, 20))
+        self.isFigurehead_check.setText("")
+        self.isFigurehead_check.setObjectName("isFigurehead_check")
         members_editMembers_window.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(members_editMembers_window)
@@ -97,12 +119,15 @@ class Ui_members_editMembers_window(object):
         self.label_2.setText(_translate("members_editMembers_window", "Department"))
         self.label_3.setText(_translate("members_editMembers_window", "Email"))
         self.pushButton.setText(_translate("members_editMembers_window", "Add Member"))
+        self.label_4.setText(_translate("members_editMembers_window", "Admin"))
+        self.label_5.setText(_translate("members_editMembers_window", "Figurehead"))
+
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
+    members_editMembers_window = QtWidgets.QMainWindow()
     ui = Ui_members_editMembers_window()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    ui.setupUi(members_editMembers_window)
+    members_editMembers_window.show()
     sys.exit(app.exec_())
