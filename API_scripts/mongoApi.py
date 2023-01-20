@@ -14,6 +14,7 @@ def newProject(title, abbv, code):
 
         #inserting collections into new db
         details = newDb.details
+        information = newDb.information
         issues = newDb.issues
         flow = newDb.flow
         gantt = newDb.gantt
@@ -38,8 +39,8 @@ def fetchDetails():
 
     #looping over all db
     for db in dbNames:
-
-        #to remove db without details collection
+      
+         #to remove db without details collection
         if db != "users" and db != "admin" and db != "local":
 
             #access collection
@@ -65,7 +66,7 @@ def fetchDetails():
 
 #for finding project db and passing all data into it
 def fetchProject(abbv):
-    dbNames  =mongo.list_database_names()
+    dbNames = mongo.list_database_names()
 
     for db in dbNames:
         if dbNames != abbv:
