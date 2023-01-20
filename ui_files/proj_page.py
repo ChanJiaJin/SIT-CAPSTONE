@@ -12,7 +12,7 @@ from mongoApi import fetchDetails, fetchProject
 
 class projectsStack(QWidget):
     def __init__(self,parent):
-        QWidget.__init__(self)
+        QWidget.__init__(self,parent)
 
         #creating table widget of projects
         projectsTable = QTableWidget()
@@ -47,6 +47,8 @@ class projectsStack(QWidget):
                 column = 0
 
         projectsTable.clicked.connect(self.openProj)
+
+        self.setLayout(projectsTable)
         
     #function for table rows to access project details
     #using abbv

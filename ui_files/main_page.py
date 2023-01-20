@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QLabel, QLineEdit, QPushButton
 
 from proj_page import projectsStack
 from add_project import AddProjectWindow
+from proj_page import projectsStack
 
 import sys
 sys.path.insert(0, "../API_scripts")
@@ -129,11 +130,11 @@ class CenterPanel(QWidget):
         sideBar.setLayout(sideVBox)
 
         #stacked widget to swap UI when needed
+        self.stackBox = QStackedWidget()
+        self.stackBox.addWidget(projectsStack(parent))
 
-        #stackBox.addWidget(projectsStack(parent))
 
-
-        #stackBox.setCurrentIndex(0)
+        self.stackBox.setCurrentIndex(0)
 
         #adding in new project button
         self.addProj = QPushButton("New Project")
