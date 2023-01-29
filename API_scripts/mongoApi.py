@@ -39,8 +39,8 @@ def fetchDetails():
 
     #looping over all db
     for db in dbNames:
-      
-         #to remove db without details collection
+    
+        #to remove db without details collection
         if db != "users" and db != "admin" and db != "local":
 
             #access collection
@@ -55,8 +55,7 @@ def fetchDetails():
                 title = i["title"]
                 abbv = i["abbv"]
                 code = i["code"]
-                projDetails = {title, abbv, code}
-
+                projDetails = [title, abbv, code]
                 #append dictionary to array
                 projectsList.append(projDetails)
         else:

@@ -11,93 +11,76 @@ sys.path.insert(0, "../API_Scripts")
 
 from mongoApi import fetchDetails
 
-
-def projectInfo(abbv):
-
-  def __init__(self, parent):
+class ProjectInfo(QWidget):
+  def __init__(self, abbv):
     QWidget.__init__(self)
 
     lblPalette = QPalette()
     lblBrush = QBrush(QColor(255, 255, 255))
-    lblBrush.setSTyle(Qt.SolidPattern)
+    lblBrush.setStyle(Qt.SolidPattern)
     lblPalette.setBrush(QPalette.Disabled, QPalette.Window, lblBrush)
 
     lblFont = QFont()
     lblFont.setFamily("Calibri Light")
-    lblFont.setPointSize(15)
+    lblFont.setPointSize(30)
 
-    #project details segment
-    self.titleLbl = QLabel("Project Title")
-    self.titleLbl.setPalette(lblPalette)
-    self.titleLbl.setFont(lblFont)
-    self.titleLbl.setAutoFillBackground(False)
+    #information labels
+    self.ttileLabel = QLabel("Project Title: ")
+    self.ttileLabel.setPalette(lblPalette)
+    self.ttileLabel.setFont(lblFont)
+    self.ttileLabel.setAutoFillBackground(False)
 
-    self.abbvLbl = QLabel("Project Abbreviation")
-    self.abbvLbl.setPalette(lblPalette)
-    self.abbvLbl.setFont(lblFont)
-    self.abbvLbl.setAutoFillBackground(False)
+    self.abbvlabel = QLabel("Project Abbreviation: ")
+    self.abbvlabel.setPalette(lblPalette)
+    self.abbvlabel.setFont(lblFont)
+    self.abbvlabel.setAutoFillBackground(False)
 
-    self.codeLbl = QLabel("Project Code")
-    self.codeLbl.setPalette(lblPalette)
-    self.codeLbl.setFont(lblFont)
-    self.codeLbl.setAutoFillBackground(False)
+    self.codeLabel = QLabel("Project Code: ")
+    self.codeLabel.setPalette(lblPalette)
+    self.codeLabel.setFont(lblFont)
+    self.codeLabel.setAutoFillBackground(False)
 
-    self.phaseLbl = QLabel("Project Phase")
-    self.phaseLbl.setPalette(lblPalette)
-    self.phaseLbl.setFont(lblFont)
-    self.phaseLbl.setAutoFillBackground(False)
+    self.currentLabel = QLabel("Current Task: ")
+    self.currentLabel.setPalette(lblPalette)
+    self.currentLabel.setFont(lblFont)
+    self.currentLabel.setAutoFillBackground(False)
 
-    #project completion and issues status segment
-    self.totalLbl = QLabel("Total Issues")
-    self.totalLbl.setPalette(lblPalette)
-    self.totalLbl.setFont(lblFont)
-    self.totalLbl.setAutoFillBackground(False)
+    self.outstandinglabel = QLabel("outstanding Tasks: ")
+    self.outstandinglabel.setPalette(lblPalette)
+    self.outstandinglabel.setFont(lblFont)
+    self.outstandinglabel.setAutoFillBackground(False)
 
-    self.openLbl = QLabel("Open Issues")
-    self.openLbl.setPalette(lblPalette)
-    self.openLbl.setFont(lblFont)
-    self.openLbl.setAutoFillBackground(False)
+    self.overrunLabel = QLabel("Overrun Status: ")
+    self.overrunLabel.setPalette(lblPalette)
+    self.overrunLabel.setFont(lblFont)
+    self.overrunLabel.setAutoFillBackground(False)
 
-    self.closedLbl = QLabel("Closed Issues")
-    self.closedLbl.setPalette(lblPalette)
-    self.closedLbl.setFont(lblFont)
-    self.closedLbl.setAutoFillBackground(False)
+    #setting up top box for ttile, abbv and code
+    self.infoBox = QVBoxLayout()
+    self.infoBox.addWidget(self.ttileLabel)
+    self.infoBox.addWidget(self.abbvlabel)
+    self.infoBox.addWidget(self.codeLabel)
 
-    self.completionlbl = QLabel("Project Completion")
-    self.completionlbl.setPalette(lblPalette)
-    self.completionlbl.setFont(lblFont)
-    self.completionlbl.setAutoFillBackground(False)
+    self.topGrp = QGroupBox()
+    self.topGrp.setLayout(self.infoBox)
 
-    #layout box setup for both segments
-    detailsVBox = QVBoxLayout()
-    detailsVBox.addWidget(self.titleLbl)
-    detailsVBox.addWidget(self.abbvLbl)
-    detailsVBox.addWidget(self.codeLbl)
-    detailsVBox.addWidget(self.phaseLbl)
+    self.topBox = QHBoxLayout()
+    self.topBox.addLayout(self.topGrp)
+    self.topBox.addStretch()
 
-    phaseVBox = QVboxLayout()
-    phaseVBox.addWidget(self.totalLbl)
-    phaseVBox.addWidget(self.openLbl)
-    phaseVBox.addWidget(self.closedLbl)
-    phaseVBox.addWidget(self.completionlbl)
+    #setting up box for tasks and overrun
+    self.taskBox = QHBoxLayout()
+    self.taskBox.addStretch()
+    self.taskBox.addWidget(self.currentLabel)
+    self.taskBox.addStretch()
+    self.taskBox.addWidget(self.outstandinglabel)
+    self.taskBox.addStretch()
+    self.taskBox.addWidget(self.overrunLabel)
+    self.taskBox.addStretch()
 
-    #details groupbox
-    self.detailsGrp = QGroupBox("PRoject Details")
-    self.detailsGrp.setLayout(detailsVBox)
-    self.detailsGrp.isCheckable(False)
-    self.detailsGrp.alignment("AlignLeft")
+    #setting up main box
+    self.mainBox = QVBoxLayout()
+    self.mainBox.addLayout(self.topBox)
+    self.mainBox.addLayout(self.taskBox)
 
-    #issues groupbox
-    self.issuesGrp = QGroupBox("Issues")
-    self.issuesGrp.setLayout(phaseVBox)
-    self.issuesGrp.isCheckable(False)
-    self.detailsGrp.alignment("AlignLeft")
-
-    #top box layout
-    topHBox = QHBoxLayout()
-    topHBox.addLayout(detailsVBox)
-    topHBox.addStretch()
-    topHBox.addLayout(phaseVBox)
-
-    #Documents groupbox and layout
-    
+    self.setLayout(self.mainBox)
