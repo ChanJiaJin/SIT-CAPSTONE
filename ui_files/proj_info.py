@@ -22,7 +22,7 @@ class ProjectInfo(QWidget):
 
     lblFont = QFont()
     lblFont.setFamily("Calibri Light")
-    lblFont.setPointSize(30)
+    lblFont.setPointSize(15)
 
     #information labels
     self.ttileLabel = QLabel("Project Title: ")
@@ -55,32 +55,60 @@ class ProjectInfo(QWidget):
     self.overrunLabel.setFont(lblFont)
     self.overrunLabel.setAutoFillBackground(False)
 
+    self.ttileLabel.setStyleSheet("""
+            QLabel {
+                color: white;
+            }
+        """)
+    
+    self.abbvlabel.setStyleSheet("""
+            QLabel {
+                color: white;
+            }
+        """)
+    
+    self.codeLabel.setStyleSheet("""
+            QLabel {
+                color: white;
+            }
+        """)
+    
+    self.currentLabel.setStyleSheet("""
+            QLabel {
+                color: white;
+            }
+        """)
+    
+    self.outstandinglabel.setStyleSheet("""
+            QLabel {
+                color: white;
+            }
+        """)
+    
+    self.overrunLabel.setStyleSheet("""
+            QLabel {
+                color: white;
+            }
+        """)
+
     #setting up top box for ttile, abbv and code
     self.infoBox = QVBoxLayout()
     self.infoBox.addWidget(self.ttileLabel)
     self.infoBox.addWidget(self.abbvlabel)
     self.infoBox.addWidget(self.codeLabel)
 
-    self.topGrp = QGroupBox()
-    self.topGrp.setLayout(self.infoBox)
-
+    #setting up top box
     self.topBox = QHBoxLayout()
-    self.topBox.addLayout(self.topGrp)
+    self.topBox.addLayout(self.infoBox)
     self.topBox.addStretch()
-
-    #setting up box for tasks and overrun
-    self.taskBox = QHBoxLayout()
-    self.taskBox.addStretch()
-    self.taskBox.addWidget(self.currentLabel)
-    self.taskBox.addStretch()
-    self.taskBox.addWidget(self.outstandinglabel)
-    self.taskBox.addStretch()
-    self.taskBox.addWidget(self.overrunLabel)
-    self.taskBox.addStretch()
+    self.topBox.addWidget(self.currentLabel)
+    self.topBox.addStretch()
+    self.topBox.addWidget(self.outstandinglabel)
+    self.topBox.addStretch()
+    self.topBox.addWidget(self.overrunLabel)
 
     #setting up main box
     self.mainBox = QVBoxLayout()
     self.mainBox.addLayout(self.topBox)
-    self.mainBox.addLayout(self.taskBox)
 
     self.setLayout(self.mainBox)

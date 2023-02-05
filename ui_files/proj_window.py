@@ -113,23 +113,6 @@ class ProjWindow(QMainWindow):
             }
         """)
 
-        self.ganttChart = QPushButton("Gantt Chart")
-        self.ganttChart.setFlat(True)
-        self.ganttChart.setStyleSheet("""
-            QPushButton {
-                Background-color: none;
-                color: white;
-                border: none;
-                font-size: 20px;
-                height: 100%;
-            }
-
-            QPushButton:hover {
-            background-color: #BB86FC;
-            color: black;
-            }
-        """)
-
         self.projSettings = QPushButton("Settings")
         self.projSettings.setFlat(True)
         self.projSettings.setStyleSheet("""
@@ -162,8 +145,6 @@ class ProjWindow(QMainWindow):
         sideVBox.addWidget(self.issuesBoard)
         sideVBox.addStretch()
         sideVBox.addWidget(self.docsList)
-        sideVBox.addStretch()
-        sideVBox.addWidget(self.ganttChart)
         sideVBox.addStretch()
         sideVBox.addWidget(self.projSettings)
         sideVBox.addStretch()
