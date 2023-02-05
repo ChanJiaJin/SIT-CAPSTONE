@@ -74,4 +74,15 @@ def fetchProject(abbv):
             return mongo[db]
 
 
-    
+#for adding in gantt chart items
+def addTask(title, task, start, end):
+    db = mongo[title]
+
+    insertDoc = {
+        "task": task,
+        "start": start,
+        "end": end
+    }
+
+    gantt = db.gantt
+    gantt.insert_one(insertDoc)

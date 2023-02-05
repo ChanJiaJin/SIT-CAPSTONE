@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QGroupBox, QStackedWidget
 from PyQt5.QtWidgets import QLabel, QLineEdit, QPushButton
 
 from proj_info import ProjectInfo
+from proj_settings import Settings
 
 import sys
 sys.path.insert(0, "../API_scripts")
@@ -64,6 +65,7 @@ class ProjWindow(QMainWindow):
         #side labels
         self.projDetails = QPushButton("Details")
         self.projDetails.setFlat(True)
+        self.projDetails.clicked.connect(self.detailsWidget)
         self.projDetails.setStyleSheet("""
             QPushButton {
                 Background-color: none;
@@ -80,6 +82,7 @@ class ProjWindow(QMainWindow):
         """)
 
         self.issuesBoard = QPushButton("Issues Board")
+        self.projDetails.clicked.connect(self.issuesWidget)
         self.issuesBoard.setFlat(True)
         self.issuesBoard.setStyleSheet("""
             QPushButton {
@@ -97,6 +100,7 @@ class ProjWindow(QMainWindow):
         """)
 
         self.docsList = QPushButton("Documentations")
+        self.projDetails.clicked.connect(self.docsWidget)
         self.docsList.setFlat(True)
         self.docsList.setStyleSheet("""
             QPushButton {
@@ -114,6 +118,7 @@ class ProjWindow(QMainWindow):
         """)
 
         self.projSettings = QPushButton("Settings")
+        self.projDetails.clicked.connect(self.settingsWidget)
         self.projSettings.setFlat(True)
         self.projSettings.setStyleSheet("""
             QPushButton {
@@ -154,6 +159,7 @@ class ProjWindow(QMainWindow):
         #stacked widget to swap UI when needed
         self.stackBox = QStackedWidget()
         self.stackBox.addWidget(ProjectInfo(abbv))
+        self.stackBox.addWidget(Settings(title))
         
         self.stackBox.setCurrentIndex(0)
 
@@ -164,6 +170,19 @@ class ProjWindow(QMainWindow):
 
         self.setCentralWidget(QWidget(self))
         self.centralWidget().setLayout(self.mainHBox)
+    
+    #swapping stacked widgets functions
+    def detailsWidget(self):
+        self.stackBox.setCurrentIndex(0)
+    
+    def issuesWidget(self):
+        self.stackBox.setCurrentIndex(1)
+
+    def docsWidget(self):
+        self.stackBox.setCurrentIndex(2)
+
+    def settingsWidget(self):
+        self.stackBox.setCurrentIndex(3)
 
 
 if __name__ == "__main__":
