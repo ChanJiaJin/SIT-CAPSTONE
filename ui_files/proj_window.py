@@ -159,7 +159,7 @@ class ProjWindow(QMainWindow):
         #stacked widget to swap UI when needed
         self.stackBox = QStackedWidget()
         self.stackBox.addWidget(ProjectInfo(abbv))
-        self.stackBox.addWidget(Settings(title))
+        #self.stackBox.addWidget(Settings(abbv))
         
         self.stackBox.setCurrentIndex(0)
 
