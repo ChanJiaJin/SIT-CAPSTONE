@@ -2,8 +2,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPalette, QColor, QBrush, QFont, QLinearGradient
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QDockWidget
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QAction, QStyleFactory
-from PyQt5.QtWidgets import QGroupBox, QStackedWidget, QTableView, QHeaderView
-from PyQt5.QtWidgets import QTableWidgetItem, QLabel, QLineEdit, QPushButton
+from PyQt5.QtWidgets import QGroupBox, QTableView, QHeaderView
+from PyQt5.QtWidgets import QTableWidgetItem, QLabel, QLineEdit, QPushButton, QComboBox
 
 import sys
 
@@ -17,6 +17,7 @@ class Settings(QWidget):
   def __init__(self, title):
     QWidget.__init__(self)
 
+    ###GANTT CHART SEGMENT HERE###
     #setting up gantt chart box title
     ganttPalette = QPalette()
     ganttBrush = QBrush(QColor(255, 255, 255))
@@ -77,12 +78,12 @@ class Settings(QWidget):
 
     #setting up add task button for gantt chart box
     self.addTask = QPushButton("Add Task")
-px    self.addTask.setStyleSheet("background-color: #BB86FC;"
+    self.addTask.setStyleSheet("background-color: #BB86FC;"
                                "color: black;"
                                "border: 2px solid white;"
                                "font-size: 20px;"
                                "height: 50px;"
-                               "width: 150;")
+                               "width: 150px;")
 
     #connectiong signal function to update db
     self.addTask.clicked.connect(self.newTask(title))
@@ -153,14 +154,12 @@ px    self.addTask.setStyleSheet("background-color: #BB86FC;"
 
     #setting up button to update table's items into db
     self.update = QPushButton("Update")
-    self.update.setStyleSheet(
-      "background-color: #BB86FC;"
-       "color: black;"
-       "border: 2px solid white;"
-       "font-size: 20px;"
-       "height: 50px;"
-       "width: 150px;"      
-    )
+    self.update.setStyleSheet("background-color: #BB86FC;"
+                              "color: black;"
+                              "border: 2px solid white;"
+                              "font-size: 20px;"
+                              "height: 50px;"
+                              "width: 150px;")
     self.update.clicked.connect(self.update(title))
 
     #setting up vertical box for gantt chart section
@@ -180,6 +179,55 @@ px    self.addTask.setStyleSheet("background-color: #BB86FC;"
 
     self.ganttGrp.setLayout(self.ganttVBox)
 
+    ###MEMBERS SEGMENT HERE###
+    #setting up members box title
+    memebrsPalette = QPalette()
+    membersBrush = QBrush(QColor(255, 255, 255))
+    membersBrush.setStyle(Qt.SolidPattern)
+    memebrsPalette.setBrush(QPalette.Disabled, QPalette.Window, membersBrush)
+
+    memebrsFont = QFont()
+    memebrsFont.setFamily("Calibri Light")
+    memebrsFont.setPointSize(15)
+
+    self.membersLabel = QLabel("Gantt Chart Items")
+    self.membersLabel.setPalette(memebrsPalette)
+    self.membersLabel.setFont(memebrsFont)
+    self.membersLabel.setAutoFillBackground(False)
+    self.membersLabel.setStyleSheet("""
+              QLabel{
+                  color: white;
+                  font-size: 30px;
+              }
+          """)
+
+    #setting up combo box for searching members
+    self.search = QComboBox()
+    self.search.setPlaceHolderText("Search for project members")
+    self.search.setStyleSheet("""
+          QComboBox{
+              background-color: white;
+              color: black;
+              width: 300px;
+              height: 30px;
+              font-size: 20px;
+          }
+      """)
+
+    #button to add member
+    self.addMember = QPushButton("Add")
+    self.addMember.setStyleSheet(
+      "background-color: #BB86FC;"
+       "color: black;"
+       "border: 2px solid white;"
+       "font-size: 20px;"
+       "height: 50px;"
+       "width: 150px;"
+    )
+
+    #table to showcase members and their details
+
+  ###FUNCTIONS FOR SIGNALS AND SLOTS###
   def newTask(self, title):
     task = self.taskInput.text()
     start = self.start.text()
@@ -210,6 +258,7 @@ px    self.addTask.setStyleSheet("background-color: #BB86FC;"
       row = +1
       column = 0
 
+
 def update(self, title):
   #to get the row count and column count
   model = self.ganttTable.model()
@@ -221,13 +270,9 @@ def update(self, title):
 
   #loop to loop through all data in the table
   for row in range(rowCount):
-    #to set the dictionary to take in the data and the 
+    #to set the dictionary to take in the data and the
     #key value pairs expected
-    rowData = {
-      "task": [],
-      "start": [],
-      "end": []
-    }
+    rowData = {"task": [], "start": [], "end": []}
 
     #to indicate which column data is being accessed now
     columnNo = 0
@@ -237,7 +282,7 @@ def update(self, title):
       #model.data() returns an object, so string conversion is needed
       cellData = str(model.data(index).toString())
 
-      #if loop to generate key value pairs to be appended to 
+      #if loop to generate key value pairs to be appended to
       #fit into mongodb update operator
       if columnNo == 0:
         rowData["task"] = cellData
@@ -247,11 +292,9 @@ def update(self, title):
         rowData["end"] = cellData
       else:
         pass
-      
+
       #to move up by one column for indexing
       columnNo += 1
 
     #To append disctionary into list
     dataset.append(rowData)
-
-    

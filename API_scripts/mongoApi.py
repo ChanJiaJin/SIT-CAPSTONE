@@ -114,3 +114,24 @@ def updateGantt(title, update):
     for new in update:
       value = {"$set": new}
       gantt.update_one(old, value)
+
+
+#for adding user into the db
+def fetchMembers(title, name, dept, discipline, email):
+  db = mongo[title]
+  members = db["members"]
+
+  insertDoc = {
+    "name": name,
+    "dept": dept,
+    "discipline": discipline,
+    "email": email
+  }
+
+  members.insert_one(insertDoc)
+
+
+#for fetching list of users
+def fetchUsers(title):
+  db = mongo[title]
+  members = db["members"]
