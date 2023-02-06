@@ -131,7 +131,7 @@ class MainWindow(QMainWindow):
         #remove vertical scroll bar
         self.projectsTable.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-        #disable item editting funtion
+        #disable item editting function
         self.projectsTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
         #selection behaviour changes from cell to row

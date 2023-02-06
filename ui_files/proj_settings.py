@@ -2,10 +2,14 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPalette, QColor, QBrush, QFont, QLinearGradient
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QDockWidget
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QAction, QStyleFactory
-from PyQt5.QtWidgets import QGroupBox, QStackedWidget, QTableView
-from PyQt5.QtWidgets import QLabel, QLineEdit, QPushButton
+from PyQt5.QtWidgets import QGroupBox, QStackedWidget, QTableView, QHeaderView
+from PyQt5.QtWidgets import QTableWidgetItem, QLabel, QLineEdit, QPushButton
 
 import sys
+
+sys.path.insert(0, "../API_Scripts")
+
+from mongoApi import addTask, fetchTasks, updateGantt
 
 
 class Settings(QWidget):
@@ -73,12 +77,15 @@ class Settings(QWidget):
 
     #setting up add task button for gantt chart box
     self.addTask = QPushButton("Add Task")
-    self.addTask.setStyleSheet("background-color: #BB86FC;"
+px    self.addTask.setStyleSheet("background-color: #BB86FC;"
                                "color: black;"
                                "border: 2px solid white;"
                                "font-size: 20px;"
                                "height: 50px;"
                                "width: 150;")
+
+    #connectiong signal function to update db
+    self.addTask.clicked.connect(self.newTask(title))
 
     #setting up gantt chart box
     self.titleHBox = QHBoxLayout()
@@ -105,6 +112,57 @@ class Settings(QWidget):
         font-size: 20px;
       """)
 
+    tasksList = fetchTasks(title)
+
+    #setting up number of rows needed for table
+    rowCount = len(tasksList)
+    self.ganttTable.setRowCount(rowCount)
+    self.projectsTable.setColumnCount(3)
+
+    #et stretch for all columns
+    header = self.ganttTable.horizontalHeader()
+    header.setSectionResizeMode(0, QHeaderView.Stretch)
+    header.setSectionResizeMode(1, QHeaderView.Stretch)
+    header.setSectionResizeMode(2, QHeaderView.Stretch)
+
+    #set horizontal headers
+    headers = ["Task Description", "Start Date", "End Date"]
+    self.ganttTable.setHorizontalHeaderLabels(headers)
+
+    #remove vertical scroll bar
+    self.ganttTable.setVerticalScrollBarPolicy(Qt.ScrollbarAlwaysOff)
+
+    #setting items to populate table
+    row = 0
+    column = 0
+
+    for task in tasksList:
+      #extracting the data items ot be displayed for each item
+      task = task[0]
+      start = task[1]
+      end = task[2]
+
+      #setting up data items into 3 columns per row
+      self.ganttTable.setItem(row, column, QTableWidgetItem(task))
+      self.ganttTable.setItem(row, column + 1, QTableWidgetItem(start))
+      self.ganttTable.setItem(row, column + 2, QTableWidgetItem(end))
+
+      #adding one more row and resetting column back to 0
+      row = +1
+      column = 0
+
+    #setting up button to update table's items into db
+    self.update = QPushButton("Update")
+    self.update.setStyleSheet(
+      "background-color: #BB86FC;"
+       "color: black;"
+       "border: 2px solid white;"
+       "font-size: 20px;"
+       "height: 50px;"
+       "width: 150px;"      
+    )
+    self.update.clicked.connect(self.update(title))
+
     #setting up vertical box for gantt chart section
     self.ganttVBox = QVBoxLayout()
     self.ganttVBox.addLayout(self.titleHBox)
@@ -121,3 +179,79 @@ class Settings(QWidget):
       """)
 
     self.ganttGrp.setLayout(self.ganttVBox)
+
+  def newTask(self, title):
+    task = self.taskInput.text()
+    start = self.start.text()
+    end = self.end.text()
+
+    addTask(title, task, start, end)
+
+    self.ganttTable.clear()
+
+    tasksList = fetchTasks()
+
+    #setting items to populate table
+    row = 0
+    column = 0
+
+    for task in tasksList:
+      #extracting the 3 data items to be displayed for each item
+      task = task[0]
+      start = start[1]
+      end = [2]
+
+      #setting data items into 3 columns per row
+      self.ganttTable.setItem(row, column, QTableWidgetItem(task))
+      self.ganttTable.setItem(row, column + 1, QTableWidgetItem(start))
+      self.ganttTable.setItem(row, column + 2, QTableWidgetItem(end))
+
+      #adding one more row and resetting column back to 0
+      row = +1
+      column = 0
+
+def update(self, title):
+  #to get the row count and column count
+  model = self.ganttTable.model()
+  rowCount = model.rowCount()
+  columnCount = model.columnCount()
+
+  #empty array to be passed into function
+  dataset = []
+
+  #loop to loop through all data in the table
+  for row in range(rowCount):
+    #to set the dictionary to take in the data and the 
+    #key value pairs expected
+    rowData = {
+      "task": [],
+      "start": [],
+      "end": []
+    }
+
+    #to indicate which column data is being accessed now
+    columnNo = 0
+    for column in range(columnCount):
+      #get index of the cell being referred to and data
+      index = model.index(row, columnNo)
+      #model.data() returns an object, so string conversion is needed
+      cellData = str(model.data(index).toString())
+
+      #if loop to generate key value pairs to be appended to 
+      #fit into mongodb update operator
+      if columnNo == 0:
+        rowData["task"] = cellData
+      elif columnNo == 1:
+        rowData["start"] = cellData
+      elif columnNo == 2:
+        rowData["end"] = cellData
+      else:
+        pass
+      
+      #to move up by one column for indexing
+      columnNo += 1
+
+    #To append disctionary into list
+    dataset.append(rowData)
+
+    
