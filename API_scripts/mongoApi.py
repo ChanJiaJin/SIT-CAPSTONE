@@ -46,10 +46,14 @@ def fetchDetails():
       details = mongo[db]["details"]
 
       #to find all info and exclude _id
+      #returns a collection if iterable 
+      #documents instead of an object
       info = details.find({}, {"_id": 0})
 
       #to loop over the returned cursor from find()
       #and put them in a dictionary
+      #a cursor is the collection of the documents
+      #returned from the cursor method find()
       for i in info:
         title = i["title"]
         abbv = i["abbv"]
@@ -75,8 +79,8 @@ def fetchProject(abbv):
 
 
 #for adding in gantt chart items
-def addTask(title, task, start, end):
-  db = mongo[title]
+def newTask(abbv, task, start, end):
+  db = mongo[abbv]
 
   insertDoc = {"task": task, "start": start, "end": end}
 
@@ -86,27 +90,41 @@ def addTask(title, task, start, end):
 
 #to fetch all tasks to display in gantt chart
 #function will be used in both proj_details and proj_settings
-def fetchTasks(title):
-  db = mongo[title]
+def fetchTasks(abbv):
+  db = mongo[abbv]
   gantt = db["gantt"]
   tasks = []
 
-  for i in gantt:
-    tasks.append(i)
+  #to extract all information from the colllection
+  #minus the _id
+  items = gantt.find({}, {"_id":0})
 
+  #to loop over the returned cursor,
+  #append each document element into a list
+  #and append the list into tasks
+  for item in items:
+    taskDets = []
+    for i in item:
+      taskDets.append(i)
+      
+    tasks.append(taskDets)
+  
   return tasks
 
 
 #To update database of any changes done to the gantt chart
 #All data to be updated regardless of how many changes there are
 #This update will work everytime the settings stack widget is changed
-def updateGantt(title, update):
-  db = mongo[title]
+def updateGantt(abbv, update):
+  db = mongo[abbv]
   gantt = db["gantt"]
 
-  #to extract old values
+  #to extract old values from the colllection
+  #minus the _id
   old = []
-  for i in gantt:
+  items = gantt.find({}, {"_id":0})
+  
+  for i in items:
     old.append(i)
 
   #to replace old values with new ones
@@ -117,8 +135,8 @@ def updateGantt(title, update):
 
 
 #for adding user into the db
-def fetchMembers(title, name, dept, discipline, email):
-  db = mongo[title]
+def addMembers(abbv, name, dept, discipline, email):
+  db = mongo[abbv]
   members = db["members"]
 
   insertDoc = {
@@ -130,8 +148,40 @@ def fetchMembers(title, name, dept, discipline, email):
 
   members.insert_one(insertDoc)
 
+def fetchMembers(abbv):
+  db = mongo[abbv]
+  members = db["members"]
+
+  membersList = members.find({},{"_id": 0})
+
+  for member in membersList:
+    memberDets = []
+    for i in member:
+      memberDets.append(i)
+
+    members.append(memberDets)
+  
+  return members
+
 
 #for fetching list of users
-def fetchUsers(title):
-  db = mongo[title]
+def fetchUsers(abbv):
+  db = mongo[abbv]
   members = db["members"]
+  users = []
+
+  #to extract all information from the colllection
+  #minus the _id
+  people = members.find({}, {"_id":0})
+
+  #to loop over the returned cursor,
+  #append each document element into a list
+  #and append the list into tasks
+  for person in people:
+    user = []
+    for i in person:
+      user.append(i)
+
+    users.append(user)
+  
+  return users
