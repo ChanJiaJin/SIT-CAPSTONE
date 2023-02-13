@@ -9,7 +9,7 @@ import sys
 
 sys.path.insert(0, "../API_Scripts")
 from mongoApi import newTask, fetchTasks, updateGantt
-from mongoApi import addmembers, fetchMembers, fetchUsers
+from mongoApi import fetchMembers, fetchUsers
 
 
 class Settings(QWidget):
@@ -287,7 +287,7 @@ membersRowCount
     self.memVBox = QVBoxLayout()
     self.memVBox.addLayout(self.memLabel)
     self.memVBox.addLayout(self.memFindHBox)
-    self.memVBox.addWidget(self.memebrs)
+    self.memVBox.addWidget(self.members)
 
     self.memGrp = QGroupBox()
     self.memGrp.setLayout(self.memVBox)

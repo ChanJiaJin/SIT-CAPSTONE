@@ -6,6 +6,21 @@ mongo = pymongo.MongoClient(
 )
 
 
+#for adding user into the db
+def addUser(name, dept, discipline, email):
+  db = mongo["user"]
+  users = db["users"]
+
+  insertDoc = {
+    "name": name,
+    "dept": dept,
+    "discipline": discipline,
+    "email": email
+  }
+
+  users.insert_one(insertDoc)
+
+
 #creating new project entry
 #inserting (Title), (Abbreviation) and (Code) into {projects} db
 #creating a new db using (Title)
@@ -134,34 +149,24 @@ def updateGantt(abbv, update):
       gantt.update_one(old, value)
 
 
-#for adding user into the db
-def addMembers(abbv, name, dept, discipline, email):
-  db = mongo[abbv]
-  members = db["members"]
-
-  insertDoc = {
-    "name": name,
-    "dept": dept,
-    "discipline": discipline,
-    "email": email
-  }
-
-  members.insert_one(insertDoc)
-
 def fetchMembers(abbv):
   db = mongo[abbv]
   members = db["members"]
 
+  projMembers = []
+
   membersList = members.find({},{"_id": 0})
 
   for member in membersList:
-    memberDets = []
     for i in member:
-      memberDets.append(i)
-
-    members.append(memberDets)
+      name = i["name"]
+      dept = i["dept"]
+      disc = i["discipline"]
+      email = i["email"]
+      membersDets = [name,dept,disc,email]
+      projMembers.append(membersDets)
   
-  return members
+  return projMembers
 
 
 #for fetching list of users

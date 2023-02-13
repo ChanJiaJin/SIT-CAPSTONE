@@ -4,6 +4,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QDockWidget
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QAction, QStyleFactory
 from PyQt5.QtWidgets import QLabel, QLineEdit, QPushButton
 
+from signUp import signUp
+
 import sys
 
 class CenterPanel(QWidget):
@@ -28,7 +30,7 @@ class CenterPanel(QWidget):
         self.lblDisplay.setAutoFillBackground(False)
         self.lblDisplay.setText("Hello and good day. Please sign in.")
         self.lblDisplay.setStyleSheet(
-            "color: black;"
+            "color: white;"
             "font-weight: bold;"
         )
 
@@ -42,8 +44,16 @@ class CenterPanel(QWidget):
         self.signUp.setFont(signUpFont)
         self.signUp.setAutoFillBackground(False)
         self.signUp.setText("No account? Sign up here.")
-        self.signUp.setStyleSheet(
-            "color: black;"
+        self.signUp.setStyleSheet("""
+            QLabel {
+                Background-color: none;
+                color: white;
+            }
+
+            QLabel:hover {
+            color: #ADD8E6;
+            }
+        """
         )
 
         #create username and password fills
@@ -76,14 +86,21 @@ class CenterPanel(QWidget):
 
         #button
         self.loginButton = QPushButton("Login")
-        self.loginButton.setStyleSheet(
-            "background-color: white;"
-            "color: black;"
-            "border-radius: 10px;"
-            "border: 2px solid white;"
-            "font-size: 25px;"
-            "height: 50px;"
-            "width: 500px;"
+        self.loginButton.setStyleSheet("""
+                QPushButton {
+                    background-color: white;
+                    color: black;
+                    border-radius: 10px;
+                    font-size: 25px;
+                    height: 50px;
+                    width: 500px;
+                }
+
+                QPushButton:hover {
+                    background-color: green;
+                    color: white;
+                }
+            """
         )
 
         #add fields to their own respective HBoxes
@@ -157,7 +174,9 @@ class LoginWindow(QMainWindow):
 
         #styling central widget
         self.setStyleSheet(
-            "Background-color: turquoise;"
+            "background-color: #121212;"
+            "padding: 0;"
+            "margin: 0;"
         )
 
 if __name__ == "__main__":
