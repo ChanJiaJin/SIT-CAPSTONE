@@ -90,3 +90,24 @@ class signUp(QMainWindow):
             "text-align: center;"
         )
 
+        #input fields setup
+        self.email = QLineEdit()
+        self.email.pladeholderText("Email")
+
+        self.password = QLineEdit()
+        self.password.pladeholderText("password")
+        self.password.setEchoMode("Password")
+
+        self.confirm = QLineEdit()
+        self.confirm.pladeholderText("Re-enter password")
+        self.confirm.setEchoMode("Password")
+
+        self.name = QLineEdit()
+        self.name.pladeholderText("Name")
+
+        self.department = QLineEdit()
+        self.department.pladeholderText("Department")
+        
+        self.discipline = QLineEdit()
+        self.discipline.pladeholderText("Discipline")
+
