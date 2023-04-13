@@ -40,7 +40,34 @@ THINGS DONE:
     
 #############################################################################
 
-11/02/2023 SATURDAY
+13/02/2023 MONDAY
 
-THINGS DONE:
+THINGS DONE: 
+    1) CHANGED LOGIN WINDOW STYLING 
+    2) ADDED SOME PARTS TO SIGN UP WINDOW
     
+#############################################################################
+
+15/02/2023 WEDNESDAY
+
+THINGS DONE: 
+    1) ADDED IN LINE EDITS TO SIGN UP WINDOW
+    
+#############################################################################
+
+16/02/2023 THURSDAY
+
+THINGS DONE: 
+    1) ADDED IN API FUNCTIONS TO SIGN UP WINDOW
+
+ISSUES MET AND TO SOLVE: 
+    1) ADD IN CANCEL FUNCTION TO SIGN UP WINDOW
+    
+#############################################################################
+
+13/04/2023 THURSDAY
+
+THINGS DONE: 
+    1) UPDATED UPDATE.TXT
+    2) ADDED CANCEL BUTTON FOR SIGNUP WINDOW
+    3) ADDED COMMENTS FOR LAMBDA FUNCTION IN PROJ SETTINGS

@@ -294,6 +294,9 @@ membersRowCount
 
       
     ###FOR CONNECTIONS TO UI ELEMENTS###
+    #LAMBA IS USED HERE AS IT IS NEEDED TO RECEIVE THE ABBV VIARABLE
+    #AND PASS IT INTO THE SLOT
+    #THIS IS UNDER THE GUIDELINES OF "INTERCEPTING A SIGNAL" FOR PYQT5
     self.updateTable.clicked.connect(lambda: self.update(abbv))
     self.add.clicked.connect(lambda: self.addTask(abbv))
 

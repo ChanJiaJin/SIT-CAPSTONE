@@ -273,6 +273,7 @@ class signUp(QMainWindow):
 
         #/-----------BUTTON CONNECTION-----------/#
         self.apply.clicked.connect(self.newUser)
+        self.cancel.clicked.connect(self.close())
 
     
     #/-----------API FUNCTIONS-----------/#

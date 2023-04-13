@@ -16,6 +16,8 @@ class ProjWindow(QMainWindow):
     def __init__(self, title,abbv):
         QMainWindow.__init__(self)
 
+      #/-----------WINDOW SETUP-----------/#
+      
         #positioning of window
         #positioning of window
         WinLeft = 100
