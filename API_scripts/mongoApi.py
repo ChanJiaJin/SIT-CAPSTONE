@@ -7,18 +7,27 @@ mongo = pymongo.MongoClient(
 
 
 #for adding user into the db
-def addUser(name, dept, discipline, email):
+def addUser(name, dept, discipline, email, password, company):
   db = mongo["user"]
-  users = db["users"]
+  users = db[name]
 
   insertDoc = {
     "name": name,
     "dept": dept,
+    "company": company,
     "discipline": discipline,
-    "email": email
+    "email": email,
+    "password": password
   }
 
   users.insert_one(insertDoc)
+
+#for validating login details
+def verUser(name, password):
+  db = mongo["user"]
+  users = db["users"]
+
+
 
 
 #creating new project entry
@@ -34,7 +43,6 @@ def newProject(title, abbv, code):
     details = newDb.details
     information = newDb.information
     issues = newDb.issues
-    flow = newDb.flow
     gantt = newDb.gantt
     docs = newDb.docs
 
