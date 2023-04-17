@@ -71,3 +71,11 @@ THINGS DONE:
     1) UPDATED UPDATE.TXT
     2) ADDED CANCEL BUTTON FOR SIGNUP WINDOW
     3) ADDED COMMENTS FOR LAMBDA FUNCTION IN PROJ SETTINGS
+        
+#############################################################################
+
+18/04/2023 MONDAY
+
+THINGS DONE: 
+    1) CHANGED SIGN UP API 
+    2) FINALISED SIGN UP PAGE
