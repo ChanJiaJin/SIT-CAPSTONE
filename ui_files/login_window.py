@@ -4,9 +4,14 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QDockWidget
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QAction, QStyleFactory
 from PyQt5.QtWidgets import QLabel, QLineEdit, QPushButton
 
-from signUp import signUp
+from sign_up import signUp
+from main_window import MainWindow
+
+import time
 
 import sys
+sys.path.insert(0, "../API_Scripts")
+from mongoApi import verUser
 
 class CenterPanel(QWidget):
     def __init__(self, parent):
@@ -23,7 +28,7 @@ class CenterPanel(QWidget):
         lblFont.setFamily("Calibri Light")
         lblFont.setPointSize(40)
 
-        #create ttile label
+        #create title label
         self.lblDisplay = QLabel()
         self.lblDisplay.setPalette(lblPalette)
         self.lblDisplay.setFont(lblFont)
@@ -34,31 +39,42 @@ class CenterPanel(QWidget):
             "font-weight: bold;"
         )
 
+        #create warning label
+        warningFont = QFont()
+        warningFont.setFamily("Calibri Light")
+        warningFont.setPointSize(15)
+
+        self.warning = QLabel()
+        self.warning.setPalette(lblPalette)
+        self.warning.setFont(warningFont)
+        self.warning.setAutoFillBackground(False)
+        self.warning.setText("")
+
         #create sign in label and font family and size
         signUpFont = QFont()
         signUpFont.setFamily("calibri Light")
         signUpFont.setPointSize(15)
 
-        self.signUp  = QLabel()
-        self.signUp.setPalette(lblPalette)
-        self.signUp.setFont(signUpFont)
-        self.signUp.setAutoFillBackground(False)
-        self.signUp.setText("No account? Sign up here.")
-        self.signUp.setStyleSheet("""
-            QLabel {
-                Background-color: none;
-                color: white;
-            }
+        self.signUp = QPushButton("No account? Sign up here.")
+        self.signUp.setStyleSheet(
+            """
+                QPushButton {
+                    color: white;
+                    border-radius: 10px;
+                    font-size: 25px;
+                    height: 50px;
+                    width: 500px;
+                }
 
-            QLabel:hover {
-            color: #ADD8E6;
-            }
-        """
+                QPushButton:hover {
+                    color: blue;
+                }
+            """
         )
 
         #create username and password fills
         self.usernameFill = QLineEdit()
-        self.usernameFill.setPlaceholderText("Username or email")
+        self.usernameFill.setPlaceholderText("Email")
 
         self.passwordFill = QLineEdit()
         self.passwordFill.setPlaceholderText("Password")
@@ -121,8 +137,13 @@ class CenterPanel(QWidget):
         pwHBox.addWidget(self.passwordFill)
         pwHBox.addStretch()
         pwHBox.setAlignment(Qt.AlignHCenter)
-    
 
+        warningHBox = QHBoxLayout()
+        warningHBox.addStretch()
+        warningHBox.addWidget(self.warning)
+        warningHBox.addStretch()
+        warningHBox.setAlignment(Qt.AlignHCenter)
+    
         loginBtnBox = QHBoxLayout()
         loginBtnBox.addWidget(self.loginButton)
         loginBtnBox.setAlignment(Qt.AlignHCenter)
@@ -140,6 +161,8 @@ class CenterPanel(QWidget):
         VBox.addLayout(userHBox)
         VBox.addLayout(pwHBox)
         VBox.addStretch()
+        VBox.addLayout(warningHBox)
+        VBox.addStretch()
         VBox.addLayout(loginBtnBox)
         VBox.addStretch()
         VBox.addLayout(signUpBox)
@@ -148,6 +171,54 @@ class CenterPanel(QWidget):
 
         #assigning layout to center pane QWidget
         self.setLayout(VBox)
+
+        #functions calls
+        self.loginButton.clicked.connect(self.login)
+        self.signUp.clicked.connect(self.signUpCall)
+
+    #for sign up of new user
+    def signUpCall(self):
+        self.window = signUp()
+        self.window.show()
+
+    #for loging in
+    def login(self):
+        check = True
+        statement = ""
+        email = self.usernameFill.text()
+        password = self.passwordFill.text()
+
+        #to check if any values are entered so the API does not
+        #return error of out of range
+        if email and password:
+            confirmation = verUser(email, password, check, statement)
+        
+            #extract values from confirmation
+            checkResult = confirmation[1]
+            state = confirmation[0]
+
+            #allow login or not
+            if checkResult:
+                self.warning.setText(state)
+                self.warning.setStyleSheet(
+                "color: green;"
+                )
+
+                time.sleep(3)
+
+                self.window = MainWindow()
+                self.window.show()
+            else:
+                self.warning.setText(state)
+                self.warning.setStyleSheet(
+                "color: red;"
+                )
+        else:
+            self.warning.setText("Please enter login credentials.")
+            self.warning.setStyleSheet(
+                "color: red;"
+            )
+
 
 #main window to encompass all elements set up
 class LoginWindow(QMainWindow):
