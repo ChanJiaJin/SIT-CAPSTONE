@@ -9,7 +9,7 @@ mongo = pymongo.MongoClient(
 #for adding user into the db
 def addUser(name, dept, discipline, email, password, company):
   db = mongo["user"]
-  users = db[name]
+  users = db["users"]
 
   insertDoc = {
     "name": name,
@@ -23,9 +23,49 @@ def addUser(name, dept, discipline, email, password, company):
   users.insert_one(insertDoc)
 
 #for validating login details
-def verUser(name, password):
-  db = mongo["user"]
-  users = db["users"]
+def verUser(email, password, check, statement):
+  #access users collection
+  user = mongo["user"]
+  users = user["users"]
+
+  #to extract all emails registered
+  items = users.find({}, {"_id":0})
+
+  #to append the items into a mutable and recognisable array
+  itemList = []
+  for i in items:
+    itemList.append(i)
+
+  #to check if email exists in the list
+  emailList = []
+  for e in itemList:
+    emailList.append(e["email"])
+
+  if email in emailList:
+    for x in itemList:
+      emailCheck = x["email"]
+
+      if emailCheck == email:
+        truePass = x["password"]
+
+        if truePass == password:
+          statement = "Logging in"
+          check = True
+          return statement, check
+        else:
+          statement = "Wrong login credentials or account does not exist."
+          check = False
+          return statement, check
+      else:
+        pass
+  else:
+    statement = "Wrong login credentials or account does not exist."
+    check = False
+    return statement, check
+
+
+  
+
 
 
 
