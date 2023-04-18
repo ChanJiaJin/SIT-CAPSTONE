@@ -74,8 +74,17 @@ THINGS DONE:
         
 #############################################################################
 
-18/04/2023 MONDAY
+17/04/2023 TUESDAY
 
 THINGS DONE: 
     1) CHANGED SIGN UP API 
     2) FINALISED SIGN UP PAGE
+            
+#############################################################################
+
+18/04/2023 TUESDAY
+
+THINGS DONE: 
+    1) FINALISED LOGIN PAGE
+    2) REVERTED ADD USER API TO HAVE ONLY ONE COLLECTION IN ONE Disabled
+    3) ADDED IN LOGIN FEATURE
